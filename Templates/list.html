@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+    <h2>My Book List</h2>
+
+    {% if items %}
+        <p>Total number of books: {{ items|length }}</p>
+
+        <ul>
+            {% for item in items %}
+                <li>{{ item|title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No items yet.</p>
+    {% endif %}
+{% endblock %}
